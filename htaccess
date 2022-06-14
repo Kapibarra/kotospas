@@ -1,0 +1,40 @@
+ErrorDocument 403 /404.html
+ErrorDocument 404 /404.html
+
+DirectoryIndex page14076165.html
+
+RewriteEngine On
+
+RewriteCond %{HTTP:X-Forwarded-Proto} =http
+RewriteRule ^(.*)$ https://kotospas\.com/$1 [R=301,L]
+
+RewriteCond %{HTTP:X-Forwarded-Proto} =https
+RewriteCond %{HTTP_HOST} ^www\.kotospas.com [NC]
+RewriteRule ^(.*)$ https://kotospas\.com/$1 [R=301,L]
+
+RewriteCond %{REQUEST_FILENAME} /robots.txt
+RewriteCond "%{DOCUMENT_ROOT}/robots_%{HTTP_HOST}.txt" -f
+RewriteRule ^(.*)$ robots_%{HTTP_HOST}.txt [NC,L]
+RewriteRule ^homepage$ page14076165.html [NC]
+RewriteRule ^homepage/$ page14076165.html [NC]
+
+RewriteRule ^results$ page14019918.html [NC]
+RewriteRule ^results/$ page14019918.html [NC]
+
+RewriteRule ^documents$ page14090369.html [NC]
+RewriteRule ^documents/$ page14090369.html [NC]
+
+RewriteRule ^renovation$ page14101183.html [NC]
+RewriteRule ^renovation/$ page14101183.html [NC]
+
+RewriteRule ^help$ page14103074.html [NC]
+RewriteRule ^help/$ page14103074.html [NC]
+
+RewriteRule ^instruction$ page27244863.html [NC]
+RewriteRule ^instruction/$ page27244863.html [NC]
+
+RewriteRule ^region$ page27250062.html [NC]
+RewriteRule ^region/$ page27250062.html [NC]
+
+RewriteRule ^favicon.ico$ https://static.tildacdn.com/tild3665-6365-4766-b265-376435313138/favicon.ico [R=302,L]
+
